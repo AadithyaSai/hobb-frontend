@@ -65,7 +65,7 @@ const Decrypt = () => {
                   onChange={(e) => setStegoImg(e.target.files[0])}
                 />
               </label>
-              <button type="submit" className="btn btn-primary mt-2">
+              <button type="submit" className="btn btn-primary mt-4 btn-lg">
                 Decrypt
               </button>
             </div>

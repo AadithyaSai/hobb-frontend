@@ -31,7 +31,7 @@ const Decrypt = () => {
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="row w-100 justify-content-center">
         <div
-          className="col-md-8 border p-4 rounded shadow text-center m-2"
+          className="col-md-8 border p-4 rounded shadow text-center m-2 bg-light"
           style={{ minWidth: "400px" }} // Ensures the box has a minimum width
         >
           <h3>Decryption</h3>
@@ -75,9 +75,20 @@ const Decrypt = () => {
             <h5>Decrypted Text:</h5>
             {decryptedText || "Your decrypted text will appear here."}
           </div>
-          <Link to="/home/" className="btn btn-success mt-3">
-            Go to Encryption
-          </Link>
+          <div className="d-flex flex-column align-items-center mb-3">
+            <Link to="/home/" className="btn btn-success mt-3">
+              Go to Encryption
+            </Link>
+            <a
+              className="btn btn-danger mt-3"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.reload();
+              }}
+            >
+              Sign Out
+            </a>
+          </div>
         </div>
       </div>
     </div>

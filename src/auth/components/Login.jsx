@@ -11,6 +11,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
   };
 
   return (
+    <div className="mc">
     <div className="form-container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
@@ -43,6 +44,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
       <p>
         Don't have an account? <span onClick={onSwitch}>Sign up</span>
       </p>
+    </div>
     </div>
   );
 };

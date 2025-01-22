@@ -64,7 +64,7 @@ const Encrypt = () => {
             <div className="d-flex flex-column align-items-center mb-3">
               {/* Secondary Buttons */}
               <div className="d-flex justify-content-center gap-2">
-                <label className="btn btn-primary">
+                <label className="btn btn-primary mt-2">
                   {img ? img.name : "Upload Image"}
                   <input
                     type="file"
@@ -85,7 +85,9 @@ const Encrypt = () => {
           <div className="bg-light p-3 rounded">
             <div className="mb-3">
               <h5>Encrypted Text:</h5>
-              {encryptedText || "Your encrypted text will appear here."}
+              <div className="text-break">
+                {encryptedText || "Your encrypted text will appear here."}
+              </div>
             </div>
             {encryptedText && (
               <a className="btn btn-primary" href={ImgUrl} download="stego.png">

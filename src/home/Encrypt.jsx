@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
+import Squares from './Squares';
 
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
@@ -36,9 +37,16 @@ const Encrypt = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="row w-100 justify-content-center">
+       <Squares 
+speed={0.5} 
+squareSize={40}
+direction='diagonal' // up, down, left, right, diagonal
+borderColor='#fff'
+hoverFillColor='#222'
+className="position-absolute w-100 h-100"
+/>
         <div
-          className="col-md-8 border p-4 rounded shadow text-center m-2"
+          className="encryption-container col-md-8 border p-4 rounded shadow text-center m-2"
           style={{ minWidth: "400px" }} // Ensures the box has a minimum width
         >
           <h3>Encryption</h3>
@@ -99,7 +107,6 @@ const Encrypt = () => {
             Go to Decryption
           </Link>
         </div>
-      </div>
     </div>
   );
 };

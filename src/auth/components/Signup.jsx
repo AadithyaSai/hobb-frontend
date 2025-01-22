@@ -11,7 +11,9 @@ const Signup = ({ onSwitch }) => {
     alert(`Signed up with Name: ${name}, Email: ${email}`);
   };
 
+  
   return (
+    <div className="mainbox">
     <div className="form-container">
       <h2>Sign Up</h2>
       <form onSubmit={handleSignup}>
@@ -43,6 +45,7 @@ const Signup = ({ onSwitch }) => {
       <p>
         Already have an account? <span onClick={onSwitch}>Log in</span>
       </p>
+    </div>
     </div>
   );
 };

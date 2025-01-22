@@ -1,14 +1,53 @@
+/* Main container for centering content */
 .app-container {
   text-align: center;
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin-top: 0; 
+  cursor:pointer;
+  z-index: 20;
 }
 
+.align-containor{
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ;
+}
+/* Wrapper for form and logo */
+.form-wrapper {
+  display: flex;
+  flex-direction:column-reverse; /* Ensure vertical stacking of logo and form */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center;
+  width: 100%;
+  max-width: 400px; /* Restrict form container width */
+  padding: 20px;
+}
+
+/* Logo styling */
+.logo {
+  border-radius: 10px;
+  width: 120px; /* Adjust the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 30px; /* Spacing below the logo */
+  display: block; 
+  cursor: default;
+}
+
+/* Header styling */
 h1 {
   color: #333;
   font-family: Arial, sans-serif;
 }
 
+/* Form container with border and shadow */
 .form-container {
+  display:flex;
+  flex-direction: column;
   width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -16,18 +55,22 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+  z-index: 20;
 }
 
+/* Subheader styling (e.g. Login, Sign up) */
 h2 {
-  color: #444;
+  color: black;
   margin-bottom: 20px;
 }
 
+/* Form layout */
 form {
   display: flex;
   flex-direction: column;
 }
 
+/* Input styling */
 input {
   margin-bottom: 15px;
   padding: 10px;
@@ -35,6 +78,7 @@ input {
   border-radius: 4px;
 }
 
+/* Button styling */
 .button {
   padding: 10px;
   background-color: #007bff;
@@ -44,10 +88,12 @@ input {
   cursor: pointer;
 }
 
+/* Button hover effect */
 .button:hover {
   background-color: #0056b3;
 }
 
+/* Paragraph styling (links) */
 p {
   margin-top: 10px;
 }

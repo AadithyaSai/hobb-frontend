@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import Squares from "./Squares";
+import DecryptedText from "./DecryptedText";
 
 const Decrypt = () => {
   const [cipherInput, setCipherInput] = useState("");
@@ -29,73 +30,75 @@ const Decrypt = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
       <Squares
         speed={0.5}
         squareSize={40}
         direction="diagonal" // up, down, left, right, diagonal
-        borderColor="#fff"
-        hoverFillColor="#222"
+        borderColor="#0000FF"
+        hoverFillColor="#eee"
         className="position-absolute w-100 h-100"
       />
-      <div
-        className="encryption-container col-md-8 border p-4 rounded shadow text-center m-2"
-        style={{ minWidth: "400px" }} // Ensures the box has a minimum width
-      >
-        <h3>Decryption</h3>
-        <form
-          method="post"
-          encType="multipart/form-data"
-          onSubmit={handleDecrypt}
+      <div className="decryption-container row w-100 justify-content-center">
+        <div
+          className="col-md-8 border p-4 rounded text-center m-2 "
+          style={{ minWidth: "400px" }} // Ensures the box has a minimum width
         >
-          <div className="mb-3">
-            <label htmlFor="cipherInput" className="form-label">
-              Enter Cipher Text
-            </label>
-            <input
-              type="text"
-              id="cipherInput"
-              name="ciphertext"
-              className="form-control"
-              value={cipherInput}
-              onChange={(e) => setCipherInput(e.target.value)}
-              placeholder="Enter cipher text"
-            />
+           <h3><DecryptedText text="Decrypt Me" 
+                  style={{
+                    color: 'white',
+                  }}/></h3><br></br>
+          <form
+            method="post"
+            encType="multipart/form-data"
+            onSubmit={handleDecrypt}
+          >
+            <div className="mb-3">
+              <input
+                type="text"
+                id="cipherInput"
+                name="ciphertext"
+                className="form-control"
+                value={cipherInput}
+                onChange={(e) => setCipherInput(e.target.value)}
+                placeholder="Enter your secret code"
+              />
+            </div>
+            <div className="d-flex flex-row align-items-center justify-content-center gap-3 mb-3">
+  <label className="btn btn-primary mb-0">
+    {stegoImg ? stegoImg.name : "Upload Image"}
+    <input
+      type="file"
+      name="stego_image"
+      accept="image/*"
+      className="form-control required d-none"
+      onChange={(e) => setStegoImg(e.target.files[0])}
+    />
+  </label>
+  <button type="submit" className="btn btn-primary">
+    Decrypt
+  </button>
+</div>
+
+          </form>
+          <div className="d-flex flex-column align-items-center mb-3"></div>
+          <div className="bg-light p-3 rounded">
+            {decryptedText || "Here's your message"}
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
-            <label className="btn btn-primary">
-              {stegoImg ? stegoImg.name : "Upload Image"}
-              <input
-                type="file"
-                name="stego_image"
-                accept="image/*"
-                className="form-control required d-none"
-                onChange={(e) => setStegoImg(e.target.files[0])}
-              />
-            </label>
-            <button type="submit" className="btn btn-primary mt-4 btn-lg">
-              Decrypt
-            </button>
+            <Link to="/home/" className="btn btn-primary mt-3">
+              Go to Encryption
+            </Link>
+            <a
+              className="btn btn-danger mt-3"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.reload();
+              }}
+            >
+              Sign Out
+            </a>
           </div>
-        </form>
-        <div className="d-flex flex-column align-items-center mb-3"></div>
-        <div className="bg-light p-3 rounded">
-          <h5>Decrypted Text:</h5>
-          {decryptedText || "Your decrypted text will appear here."}
-        </div>
-        <div className="d-flex flex-column align-items-center mb-3">
-          <Link to="/home/" className="btn btn-success mt-3">
-            Go to Encryption
-          </Link>
-          <a
-            className="btn btn-danger mt-3"
-            onClick={() => {
-              localStorage.removeItem("token");
-              window.location.reload();
-            }}
-          >
-            Sign Out
-          </a>
         </div>
       </div>
     </div>

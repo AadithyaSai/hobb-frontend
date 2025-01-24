@@ -12,15 +12,32 @@
     top: 0;
     left: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .encryption-container {
     position: relative;
     z-index: 1;
-    background-color: rgb(182, 176, 176);
+    /* background-color: rgb(44, 79, 185); */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(214, 29, 29, 0.1);
     padding: 20px;
     margin: 0;
+    /* opacity: 0.5; */
+}
+
+.decryption-container {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    
+}
+
+.rounded {
+    border: none !important; /* Overrides any default Bootstrap styling */
 }

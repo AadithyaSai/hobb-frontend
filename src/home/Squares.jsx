@@ -4,9 +4,9 @@ import './Squares.css';
 const Squares = ({
 direction = 'right',
 speed = 1,
-borderColor = '#999',
+borderColor = '#000',
 squareSize = 40,
-hoverFillColor = '#222',
+hoverFillColor = '#000',
 }) => {
 const canvasRef = useRef(null);
 const requestRef = useRef(null);

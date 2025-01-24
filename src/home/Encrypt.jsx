@@ -43,7 +43,7 @@ const Encrypt = () => {
         speed={0.5}
         squareSize={40}
         direction="diagonal" // up, down, left, right, diagonal
-        borderColor="#0000FF"
+        borderColor="#008000"
         hoverFillColor="#eee"
         className="position-absolute w-100 h-100"
       />

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import Squares from "./Squares";
+import DecryptedText from "./DecryptedText";
+
 
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
@@ -36,29 +38,29 @@ const Encrypt = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="d-flex justify-content-center align-items-center vh-100 border vw-100">
       <Squares
         speed={0.5}
         squareSize={40}
         direction="diagonal" // up, down, left, right, diagonal
-        borderColor="#fff"
-        hoverFillColor="#222"
+        borderColor="#0000FF"
+        hoverFillColor="#eee"
         className="position-absolute w-100 h-100"
       />
       <div
-        className="encryption-container col-md-8 border p-4 rounded shadow text-center m-2"
+        className="encryption-container col-md-8 p-4 rounded shadow text-center m-2"
         style={{ minWidth: "400px" }} // Ensures the box has a minimum width
       >
-        <h3>Encryption</h3>
+        <h3><DecryptedText text="Encrypt Me" 
+        style={{
+          color: 'white',
+        }}/></h3><br></br>
         <form
           onSubmit={handleEncrypt}
           method="post"
           encType="multipart/form-data"
         >
           <div className="mb-3">
-            <label htmlFor="plainText" className="form-label">
-              Enter Plain Text
-            </label>
             <input
               type="text"
               id="plainText"
@@ -66,7 +68,7 @@ const Encrypt = () => {
               className="form-control"
               value={plainText}
               onChange={(e) => setPlainText(e.target.value)}
-              placeholder="Enter text"
+              placeholder="Drop your secret message here!!"
             />
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
@@ -92,9 +94,8 @@ const Encrypt = () => {
 
         <div className="bg-light p-3 rounded">
           <div className="mb-3">
-            <h5>Encrypted Text:</h5>
             <div className="text-break">
-              {encryptedText || "Your encrypted text will appear here."}
+              {encryptedText || "Here's your secret code !"}
             </div>
           </div>
           {encryptedText && (

@@ -71,10 +71,9 @@ const Encrypt = () => {
               placeholder="Drop your secret message here!!"
             />
           </div>
-          <div className="d-flex flex-column align-items-center mb-3">
+          <div className="d-flex flex-column align-items-center gap-3 mb-3">
             {/* Secondary Buttons */}
-            <div className="d-flex justify-content-center gap-2">
-              <label className="btn btn-primary mt-2">
+                <label className="btn btn-primary m-0">
                 {img ? img.name : "Upload Image"}
                 <input
                   type="file"
@@ -85,10 +84,9 @@ const Encrypt = () => {
                 />
               </label>
               {/* Encrypt Button */}
-              <button type="submit" className="btn btn-primary mt-2">
+              <button type="submit" className="btn btn-primary">
                 Encrypt
               </button>
-            </div>
           </div>
         </form>
 

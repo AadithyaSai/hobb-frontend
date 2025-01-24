@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import Squares from "./Squares";
+import DecryptedText from "./DecryptedText";
 
 const Decrypt = () => {
   const [cipherInput, setCipherInput] = useState("");
@@ -28,22 +30,30 @@ const Decrypt = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="row w-100 justify-content-center">
+    <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
+      <Squares
+        speed={0.5}
+        squareSize={40}
+        direction="diagonal" // up, down, left, right, diagonal
+        borderColor="#0000FF"
+        hoverFillColor="#eee"
+        className="position-absolute w-100 h-100"
+      />
+      <div className="decryption-container row w-100 justify-content-center">
         <div
-          className="col-md-8 border p-4 rounded shadow text-center m-2 bg-light"
+          className="col-md-8 border p-4 rounded text-center m-2 "
           style={{ minWidth: "400px" }} // Ensures the box has a minimum width
         >
-          <h3>Decryption</h3>
+           <h3><DecryptedText text="Decrypt Me" 
+                  style={{
+                    color: 'white',
+                  }}/></h3><br></br>
           <form
             method="post"
             encType="multipart/form-data"
             onSubmit={handleDecrypt}
           >
             <div className="mb-3">
-              <label htmlFor="cipherInput" className="form-label">
-                Enter Cipher Text
-              </label>
               <input
                 type="text"
                 id="cipherInput"
@@ -51,11 +61,11 @@ const Decrypt = () => {
                 className="form-control"
                 value={cipherInput}
                 onChange={(e) => setCipherInput(e.target.value)}
-                placeholder="Enter cipher text"
+                placeholder="Enter your secret code"
               />
             </div>
             <div className="d-flex flex-column align-items-center mb-3">
-              <label className="btn btn-primary">
+              <label className="btn btn-primary mt-2">
                 {stegoImg ? stegoImg.name : "Upload Image"}
                 <input
                   type="file"
@@ -65,15 +75,14 @@ const Decrypt = () => {
                   onChange={(e) => setStegoImg(e.target.files[0])}
                 />
               </label>
-              <button type="submit" className="btn btn-primary mt-4 btn-lg">
+              <button type="submit" className="btn btn-primary mt-2">
                 Decrypt
               </button>
             </div>
           </form>
           <div className="d-flex flex-column align-items-center mb-3"></div>
           <div className="bg-light p-3 rounded">
-            <h5>Decrypted Text:</h5>
-            {decryptedText || "Your decrypted text will appear here."}
+            {decryptedText || "Here's your message"}
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
             <Link to="/home/" className="btn btn-success mt-3">

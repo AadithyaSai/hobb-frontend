@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
-import Squares from './Squares';
+import Squares from "./Squares";
 
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
@@ -37,76 +37,87 @@ const Encrypt = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-       <Squares 
-speed={0.5} 
-squareSize={40}
-direction='diagonal' // up, down, left, right, diagonal
-borderColor='#fff'
-hoverFillColor='#222'
-className="position-absolute w-100 h-100"
-/>
-        <div
-          className="encryption-container col-md-8 border p-4 rounded shadow text-center m-2"
-          style={{ minWidth: "400px" }} // Ensures the box has a minimum width
+      <Squares
+        speed={0.5}
+        squareSize={40}
+        direction="diagonal" // up, down, left, right, diagonal
+        borderColor="#fff"
+        hoverFillColor="#222"
+        className="position-absolute w-100 h-100"
+      />
+      <div
+        className="encryption-container col-md-8 border p-4 rounded shadow text-center m-2"
+        style={{ minWidth: "400px" }} // Ensures the box has a minimum width
+      >
+        <h3>Encryption</h3>
+        <form
+          onSubmit={handleEncrypt}
+          method="post"
+          encType="multipart/form-data"
         >
-          <h3>Encryption</h3>
-          <form
-            onSubmit={handleEncrypt}
-            method="post"
-            encType="multipart/form-data"
-          >
-            <div className="mb-3">
-              <label htmlFor="plainText" className="form-label">
-                Enter Plain Text
-              </label>
-              <input
-                type="text"
-                id="plainText"
-                name="plaintext"
-                className="form-control"
-                value={plainText}
-                onChange={(e) => setPlainText(e.target.value)}
-                placeholder="Enter text"
-              />
-            </div>
-            <div className="d-flex flex-column align-items-center mb-3">
-              {/* Secondary Buttons */}
-              <div className="d-flex justify-content-center gap-2">
-                <label className="btn btn-primary mt-2">
-                  {img ? img.name : "Upload Image"}
-                  <input
-                    type="file"
-                    name="image"
-                    accept="image/*"
-                    className="form-control required d-none"
-                    onChange={(e) => setImg(e.target.files[0])}
-                  />
-                </label>
-                {/* Encrypt Button */}
-                <button type="submit" className="btn btn-primary mt-2">
-                  Encrypt
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <div className="bg-light p-3 rounded">
-            <div className="mb-3">
-              <h5>Encrypted Text:</h5>
-              <div className="text-break">
-                {encryptedText || "Your encrypted text will appear here."}
-              </div>
-            </div>
-            {encryptedText && (
-              <a className="btn btn-primary" href={ImgUrl} download="stego.png">
-                Download Image
-              </a>
-            )}
+          <div className="mb-3">
+            <label htmlFor="plainText" className="form-label">
+              Enter Plain Text
+            </label>
+            <input
+              type="text"
+              id="plainText"
+              name="plaintext"
+              className="form-control"
+              value={plainText}
+              onChange={(e) => setPlainText(e.target.value)}
+              placeholder="Enter text"
+            />
           </div>
+          <div className="d-flex flex-column align-items-center mb-3">
+            {/* Secondary Buttons */}
+            <div className="d-flex justify-content-center gap-2">
+              <label className="btn btn-primary mt-2">
+                {img ? img.name : "Upload Image"}
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  className="form-control required d-none"
+                  onChange={(e) => setImg(e.target.files[0])}
+                />
+              </label>
+              {/* Encrypt Button */}
+              <button type="submit" className="btn btn-primary mt-2">
+                Encrypt
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div className="bg-light p-3 rounded">
+          <div className="mb-3">
+            <h5>Encrypted Text:</h5>
+            <div className="text-break">
+              {encryptedText || "Your encrypted text will appear here."}
+            </div>
+          </div>
+          {encryptedText && (
+            <a className="btn btn-primary" href={ImgUrl} download="stego.png">
+              Download Image
+            </a>
+          )}
+        </div>
+        <div className="d-flex flex-column align-items-center">
           <Link to="/home/decrypt" className="btn btn-success mt-3">
             Go to Decryption
           </Link>
+          <a
+            className="btn btn-danger mt-3"
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.reload();
+            }}
+          >
+            Sign Out
+          </a>
         </div>
+      </div>
     </div>
   );
 };

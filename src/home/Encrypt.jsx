@@ -71,23 +71,24 @@ const Encrypt = () => {
               placeholder="Drop your secret message here!!"
             />
           </div>
-          <div className="d-flex flex-column align-items-center gap-3 mb-3">
-            {/* Secondary Buttons */}
-                <label className="btn btn-primary m-0">
-                {img ? img.name : "Upload Image"}
-                <input
-                  type="file"
-                  name="image"
-                  accept="image/*"
-                  className="form-control required d-none"
-                  onChange={(e) => setImg(e.target.files[0])}
-                />
-              </label>
-              {/* Encrypt Button */}
-              <button type="submit" className="btn btn-primary">
-                Encrypt
-              </button>
-          </div>
+          <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
+  {/* Secondary Buttons */}
+  <label className="btn btn-success m-0">
+    {img ? img.name : "Upload Image"}
+    <input
+      type="file"
+      name="image"
+      accept="image/*"
+      className="form-control required d-none"
+      onChange={(e) => setImg(e.target.files[0])}
+    />
+  </label>
+  {/* Encrypt Button */}
+  <button type="submit" className="btn btn-success">
+    Encrypt
+  </button>
+</div>
+
         </form>
 
         <div className="bg-light p-3 rounded">
@@ -97,7 +98,7 @@ const Encrypt = () => {
             </div>
           </div>
           {encryptedText && (
-            <a className="btn btn-primary" href={ImgUrl} download="stego.png">
+            <a className="btn btn-success" href={ImgUrl} download="stego.png">
               Download Image
             </a>
           )}

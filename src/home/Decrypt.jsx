@@ -64,28 +64,29 @@ const Decrypt = () => {
                 placeholder="Enter your secret code"
               />
             </div>
-            <div className="d-flex flex-column align-items-center mb-3">
-              <label className="btn btn-primary mt-2">
-                {stegoImg ? stegoImg.name : "Upload Image"}
-                <input
-                  type="file"
-                  name="stego_image"
-                  accept="image/*"
-                  className="form-control required d-none"
-                  onChange={(e) => setStegoImg(e.target.files[0])}
-                />
-              </label>
-              <button type="submit" className="btn btn-primary mt-2">
-                Decrypt
-              </button>
-            </div>
+            <div className="d-flex flex-row align-items-center justify-content-center gap-3 mb-3">
+  <label className="btn btn-primary mb-0">
+    {stegoImg ? stegoImg.name : "Upload Image"}
+    <input
+      type="file"
+      name="stego_image"
+      accept="image/*"
+      className="form-control required d-none"
+      onChange={(e) => setStegoImg(e.target.files[0])}
+    />
+  </label>
+  <button type="submit" className="btn btn-primary">
+    Decrypt
+  </button>
+</div>
+
           </form>
           <div className="d-flex flex-column align-items-center mb-3"></div>
           <div className="bg-light p-3 rounded">
             {decryptedText || "Here's your message"}
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
-            <Link to="/home/" className="btn btn-success mt-3">
+            <Link to="/home/" className="btn btn-primary mt-3">
               Go to Encryption
             </Link>
             <a

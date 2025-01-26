@@ -78,6 +78,7 @@ input {
 
 /* Button styling */
 .button {
+  margin-top: 10px;
   padding: 10px;
   background-color: #007bff;
   color: white;
@@ -91,11 +92,6 @@ input {
   background-color: #0056b3;
 }
 
-/* Paragraph styling (links) */
-p {
-  margin-top: 10px;
-}
-
 p span {
   color: #007bff;
   cursor: pointer;
@@ -103,4 +99,35 @@ p span {
 
 p span:hover {
   text-decoration: underline;
+}
+
+.forgot-password {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.switch {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.form-container label {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  margin-right: auto;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.form-container input::placeholder {
+  font-size: 13px;
+  color: #999;
 }

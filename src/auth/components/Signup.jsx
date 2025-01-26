@@ -63,22 +63,28 @@ const Signup = ({ onSwitch }) => {
       <div className="form-container">
         <h2>Sign Up</h2>
         <form onSubmit={handleSignup}>
+          <label htmlFor="name">Your name</label>
           <input
             type="text"
+            name="name"
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
+          <label htmlFor="email">Email</label>
           <input
             type="email"
+            name="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          <label htmlFor="password">Password</label>
           <input
             type="password"
+            name="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -88,7 +94,7 @@ const Signup = ({ onSwitch }) => {
             Sign Up
           </button>
         </form>
-        <p>
+        <p className="switch">
           Already have an account? <span onClick={onSwitch}>Log in</span>
         </p>
       </div>

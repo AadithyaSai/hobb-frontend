@@ -36,6 +36,22 @@
   /* opacity: 0.5; */
 }
 
+.encryption-container input,
+a,
+button,
+span,
+label {
+  pointer-events: all;
+}
+
+.decryption-container input,
+a,
+button,
+span,
+label {
+  pointer-events: all;
+}
+
 .decryption-container {
   position: relative;
   z-index: 1;
@@ -45,6 +61,7 @@
   padding: 20px;
   margin: 0;
   border: none;
+  pointer-events: none;
 }
 
 .rounded {

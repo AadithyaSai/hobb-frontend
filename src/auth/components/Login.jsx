@@ -65,7 +65,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         setInactive={() => setAlertData({ ...alertData, active: false })}
       />
       <div className="form-container">
-        <h2>Login</h2>
+        <br></br><h2>Login</h2>
         <form onSubmit={handleLogin}>
           <label htmlFor="username">Email</label>
           <input
@@ -97,7 +97,15 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             Login
           </button>
         </form>
-        <p className="switch">
+        <p>
+          <span
+            onClick={onForgotPassword}
+            style={{ color: "white", cursor: "pointer" }}
+          >
+            Forgot Password?
+          </span>
+        </p>
+        <p>
           Don't have an account? <span onClick={onSwitch}>Sign up</span>
         </p>
       </div>

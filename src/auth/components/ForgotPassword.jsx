@@ -10,7 +10,7 @@ const ForgotPassword = ({ onSwitch }) => {
   };
 
   return (
-    <div className="form-container">
+    <div style= {{marginTop:"50px"}}className="form-container">
       <h2>Forgot Password</h2>
       <form onSubmit={handleReset}>
         <input

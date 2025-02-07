@@ -25,43 +25,27 @@
 }
 
 .encryption-container {
-  position: relative;
-  z-index: 1;
-  /* background-color: rgb(44, 79, 185); */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(214, 29, 29, 0.1);
-  padding: 20px;
-  margin: 0;
-  pointer-events: none;
-  /* opacity: 0.5; */
-}
-
-.encryption-container input,
-a,
-button,
-span,
-label {
-  pointer-events: all;
-}
-
-.decryption-container input,
-a,
-button,
-span,
-label {
-  pointer-events: all;
+    position: relative;
+    z-index: 1;
+    /* background-color: rgb(44, 79, 185); */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(214, 29, 29, 0.1);
+    padding: 20px;
+    margin: 0;
+    pointer-events: auto;
+    /* opacity: 0.5; */
 }
 
 .decryption-container {
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  border-radius: 8px;
-  box-shadow: none;
-  padding: 20px;
-  margin: 0;
-  border: none;
-  pointer-events: none;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 20px;
+    margin: 0;
+    pointer-events: auto;
+    border: none;
 }
 
 .rounded {

@@ -36,7 +36,7 @@ const Decrypt = () => {
         squareSize={40}
         direction="diagonal" // up, down, left, right, diagonal
         borderColor="#0000FF"
-        hoverFillColor="#eee"
+        hoverFillColor="#000040"
         className="position-absolute w-100 h-100"
       />
       <div className="decryption-container row w-100 justify-content-center">
@@ -44,10 +44,15 @@ const Decrypt = () => {
           className="col-md-8 border p-4 rounded text-center m-2 "
           style={{ minWidth: "400px" }} // Ensures the box has a minimum width
         >
-           <h3><DecryptedText text="Decrypt Me" 
-                  style={{
-                    color: 'white',
-                  }}/></h3><br></br>
+          <h3>
+            <DecryptedText
+              text="Decrypt Me"
+              style={{
+                color: "white",
+              }}
+            />
+          </h3>
+          <br></br>
           <form
             method="post"
             encType="multipart/form-data"
@@ -65,21 +70,20 @@ const Decrypt = () => {
               />
             </div>
             <div className="d-flex flex-row align-items-center justify-content-center gap-3 mb-3">
-  <label className="btn btn-primary mb-0">
-    {stegoImg ? stegoImg.name : "Upload Image"}
-    <input
-      type="file"
-      name="stego_image"
-      accept="image/*"
-      className="form-control required d-none"
-      onChange={(e) => setStegoImg(e.target.files[0])}
-    />
-  </label>
-  <button type="submit" className="btn btn-primary">
-    Decrypt
-  </button>
-</div>
-
+              <label className="btn btn-primary mb-0">
+                {stegoImg ? stegoImg.name : "Upload Image"}
+                <input
+                  type="file"
+                  name="stego_image"
+                  accept="image/*"
+                  className="form-control required d-none"
+                  onChange={(e) => setStegoImg(e.target.files[0])}
+                />
+              </label>
+              <button type="submit" className="btn btn-primary">
+                Decrypt
+              </button>
+            </div>
           </form>
           <div className="d-flex flex-column align-items-center mb-3"></div>
           <div className="bg-light p-3 rounded">

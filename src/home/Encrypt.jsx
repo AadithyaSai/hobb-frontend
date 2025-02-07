@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import Squares from "./Squares";
 import DecryptedText from "./DecryptedText";
 
-
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
   const [img, setImg] = useState("");
@@ -44,17 +43,22 @@ const Encrypt = () => {
         squareSize={40}
         direction="diagonal" // up, down, left, right, diagonal
         borderColor="#008000"
-        hoverFillColor="#eee"
+        hoverFillColor="#003000"
         className="position-absolute w-100 h-100"
       />
       <div
         className="encryption-container col-md-8 p-4 rounded shadow text-center m-2"
         style={{ minWidth: "400px" }} // Ensures the box has a minimum width
       >
-        <h3><DecryptedText text="Encrypt Me" 
-        style={{
-          color: 'white',
-        }}/></h3><br></br>
+        <h3>
+          <DecryptedText
+            text="Encrypt Me"
+            style={{
+              color: "white",
+            }}
+          />
+        </h3>
+        <br></br>
         <form
           onSubmit={handleEncrypt}
           method="post"
@@ -88,7 +92,6 @@ const Encrypt = () => {
     Encrypt
   </button>
 </div>
-
         </form>
         
         <div className="bg-light p-3 rounded">

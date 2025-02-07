@@ -34,7 +34,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
   return (
     <div className="mc">
       <div className="form-container">
-        <h2>Login</h2>
+        <br></br><h2>Login</h2>
         <form onSubmit={handleLogin}>
           <input
             type="email"
@@ -56,10 +56,11 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             Login
           </button>
         </form>
+        
         <p>
           <span
             onClick={onForgotPassword}
-            style={{ color: "red", cursor: "pointer" }}
+            style={{ color: "white", cursor: "pointer" }}
           >
             Forgot Password?
           </span>

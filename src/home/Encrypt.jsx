@@ -71,7 +71,7 @@ const Encrypt = () => {
               placeholder="Drop your secret message here!!"
             />
           </div>
-          <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
+          <div className="d-flex flex-row align-items-center justify-content-center gap-3 mb-3">
   {/* Secondary Buttons */}
   <label className="btn btn-success m-0">
     {img ? img.name : "Upload Image"}
@@ -90,7 +90,7 @@ const Encrypt = () => {
 </div>
 
         </form>
-
+        
         <div className="bg-light p-3 rounded">
           <div className="mb-3">
             <div className="text-break">

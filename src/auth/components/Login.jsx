@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import "../AuthenticationForm.css";
 import { data } from "react-router";
+import Alert from "../../common/Alert";
 
 const Login = ({ onSwitch, onForgotPassword }) => {
   const [formData, setFormData] = useState({ username: "", password: "" });
+  const [alertData, setAlertData] = useState({
+    active: false,
+    message: "",
+    type: "",
+  });
 
   const onFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +25,16 @@ const Login = ({ onSwitch, onForgotPassword }) => {
       },
       body: user,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          setAlertData({
+            active: true,
+            message: "Bad credentials! Please try again.",
+            type: "danger",
+          });
+        }
+        return res.json();
+      })
       .then((data) => {
         if (data.error) {
           alert(data.error);
@@ -28,14 +43,31 @@ const Login = ({ onSwitch, onForgotPassword }) => {
           localStorage.setItem("token", data.access_token);
           window.location.reload();
         }
+      })
+      .catch((error) => {
+        if (error instanceof TypeError) {
+          console.error("Network error or CORS issue:", error.message);
+          setAlertData({
+            active: true,
+            message: "Network Error! Please try again later.",
+            type: "danger",
+          });
+        } else {
+          console.error("Error:", error.message);
+        }
       });
   };
 
   return (
     <div className="mc">
+      <Alert
+        {...alertData}
+        setInactive={() => setAlertData({ ...alertData, active: false })}
+      />
       <div className="form-container">
         <br></br><h2>Login</h2>
         <form onSubmit={handleLogin}>
+          <label htmlFor="username">Email</label>
           <input
             type="email"
             name="username"
@@ -44,6 +76,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             onChange={onFormChange}
             required
           />
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
@@ -52,11 +85,18 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             onChange={onFormChange}
             required
           />
+          <p className="forgot-password">
+            <span
+              onClick={onForgotPassword}
+              style={{ color: "red", cursor: "pointer" }}
+            >
+              Forgot Password?
+            </span>
+          </p>
           <button type="submit" className="button">
             Login
           </button>
         </form>
-        
         <p>
           <span
             onClick={onForgotPassword}

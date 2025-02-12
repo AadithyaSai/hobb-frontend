@@ -1,0 +1,268 @@
+/* Reset & Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+/* Team Section */
+.team-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 32px;
+  color: #1e90ff;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background-color: rgba(246, 246, 246, 0.97);
+  padding: 100px; /* Increase for more height */
+  border-radius: 40px;
+  width: 300px; /* Increase for more width */
+  text-align: center;
+}
+
+.team-img {
+  width: 100px; /* Adjust size */
+  height: 100px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure images fit well */
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  color: #1e90ff;
+  text-size-adjust: 20px;
+}
+
+
+/* Logo Container */
+.logo-container {
+  margin-bottom: 10px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  border-radius: 40px;
+  width: 70px;
+  height: auto;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 50px;
+  padding: 0.1rem 2rem; /* Reduced padding for smaller height */
+  color: white;
+  position: fixed;
+  height: 10%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem; /* Increased gap for more spacing between items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem; /* Slightly increased font size for better readability */
+}
+
+.nav-links a:hover {
+  color: #0072ff; /* Optional: Hover effect for better user experience */
+}
+
+.nav-button {
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+
+.spline-model{
+  position: absolute;
+  height: 300px;
+  right: 10px;
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 150px auto;
+  padding: 0 80px;
+}
+
+.hero-section {
+  text-align: right;
+  overflow: hidden;
+  height: 500px;
+  width: 700px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Circular Gallery */
+.circular-gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  position: relative;
+}
+
+/* Front Page Main Content */
+.front-page {
+  text-align: center;
+  background: transparent;
+  color: white;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  flex: 1;
+  text-align: left;
+  max-width: 50%;
+  margin: 0;
+}
+
+.welcome-section h1 {
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+button {
+  background: #0072ff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0072ff;
+}
+
+/* === ABOUT US SECTION === */
+.about-us {
+  padding: 50px 20px;
+  background-color: rgba(15, 4, 4, 0.1);
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 40px;
+  color: #1e90ff;
+}
+
+.about-us p {
+  font-size: 25px;
+  color: #ddd;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === TEAM SECTION === */
+.team-section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 40px;
+  color: #1e90ff;
+  margin-bottom: 3%;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 20px;
+  width: 280px;
+  height: 400px;
+  text-align: center;
+}
+
+.team-member h3 {
+  margin-top: 4%;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.team-img {
+  width: 240px; /* Set the desired width */
+  height: 290px; /* Set the desired height */
+  object-fit: cover; /* Ensures the image fits properly without distortion */
+  border-radius: 20%; /* Makes the image circular */
+  border: 2px solid #ddd; /* Optional: Adds a border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for styling */
+}
+
+
+/* === CONTACT US SECTION === */
+.contact-us {
+  padding: 50px 20px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.contact-us h2 {
+  font-size: 40px;
+  color: #1e90ff;
+}
+
+.contact-us p {
+  font-size: 18px;
+  color: #ddd;
+  margin: 10px 0;
+}

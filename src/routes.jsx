@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import AuthenticationForm from "./auth/AuthenticationForm";
 import Home from "./home/Home";
+import FrontPage from "./Frontpage"; // Ensure correct path
 import Encrypt from "./home/Encrypt";
 import Decrypt from "./home/Decrypt";
 import { Navigate } from "react-router";
@@ -18,6 +19,10 @@ const UnprotectedRoute = ({ element }) => {
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <UnprotectedRoute element={<FrontPage />} />, // Correctly render FrontPage here
+  },
+  {
+    path: "/auth",
     element: <UnprotectedRoute element={<AuthenticationForm />} />,
   },
   {

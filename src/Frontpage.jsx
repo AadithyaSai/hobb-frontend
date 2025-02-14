@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./FrontPage.css"; // Ensure you have styles for layout
 import CircularGallery from "./CircularGallery";
@@ -20,6 +20,11 @@ const handleAnimationComplete = () => {
   console.log('All letters have animated!');
 };
 const FrontPage = () => {
+
+  window.onload = () => {
+    AOS.init();
+  }
+
   return (
     <div className="front-page">
       {/* Navigation Bar */}
@@ -69,8 +74,8 @@ const FrontPage = () => {
       </div>
 
       {/* About Us Section */}
-      <section id = "about" className="about-us">
-        <h2>About Us</h2>
+      <section data-aos="flip-left" data-aos-easing="ease-in-back" data-aos-duration="1000" id = "about" className="about-us">
+        <h2 >About Us</h2>
        <p>
        <ShinyText text="At HOBB, we specialize in cutting-edge encryption and secure communication solutions.
           Our mission is to empower individuals and businesses with innovative security tools 
@@ -79,7 +84,7 @@ const FrontPage = () => {
       </section>
 
 {/* Team Section */}
-<section id = "team" className="team-section">
+<section data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-duration="1000" id = "team" className="team-section">
   <h2>Meet Our Team</h2>
   <div className="team-container">
     <div className="team-member">
@@ -99,9 +104,7 @@ const FrontPage = () => {
       <h3>Gopika Chandran A J</h3>
     </div>
   </div>
-</section>
-
-
+  </section>
 
       {/* Contact Us Section */}
       <section id = "contact" className="contact-us">

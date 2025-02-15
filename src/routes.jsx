@@ -8,7 +8,7 @@ import { Navigate } from "react-router";
 
 const ProtectedRoute = ({ element }) => {
   const token = localStorage.getItem("token"); // Check if token exists
-  return token ? element : <Navigate to="/" />;
+  return token ? element : <Navigate to="/auth" />;
 };
 
 const UnprotectedRoute = ({ element }) => {
@@ -19,7 +19,7 @@ const UnprotectedRoute = ({ element }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UnprotectedRoute element={<FrontPage />} />, // Correctly render FrontPage here
+    element: <FrontPage />, // Correctly render FrontPage here
   },
   {
     path: "/auth",

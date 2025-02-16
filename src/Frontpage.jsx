@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { FaSignInAlt, FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./FrontPage.css"; // Ensure you have styles for layout
+import AuthenticationForm from "./auth/AuthenticationForm.jsx";
+import "./FrontPage.css"; 
 import CircularGallery from "./CircularGallery";
 import logo from "./logo.png";
 import image from "./image.webp"
@@ -33,11 +35,15 @@ const FrontPage = () => {
           <img src={logo} alt="Logo" className="logo" />
         </h2>
         <ul className="nav-links">
-         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-          <li><button className="nav-button">Login / Sign Up</button></li>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#team">TEAM</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+
+          {/* Updated Login / Sign Up Button */}
+           <li><Link to="/auth" className="nav-button">
+          <FaSignInAlt size={20} />
+          </Link></li>
         </ul>
       </nav>
 
@@ -45,9 +51,8 @@ const FrontPage = () => {
       <div id = "home" className="hero-container">
         <div className="welcome-section">
 
-
-        <h1 style={{ fontSize: "3rem" }}><SplitText
-        text="Welcome to HOBB"
+        <h1 style={{fontFamily: 'Lucida Console, monospace', fontSize: "3rem" }}><SplitText
+        text="WELCOME TO HOBB"
         className="text-2xl font-semibold text-center"
         delay={150}
         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
@@ -58,9 +63,8 @@ const FrontPage = () => {
         onLetterAnimationComplete={handleAnimationComplete}
         /></h1>
 
-<h1 style={{ fontSize: "1.5rem" }}><ShinyText text="Advanced encryption and stealth protection, redefining the standard for secure data exchange." disabled={false} speed={3} className='custom-class' /></h1>
-
-       <button className="cta-button">Let's get started</button>
+        <h1 style={{fontFamily: 'Source Code Pro, monospace', fontWeight: 'bold', fontSize: "1.5rem" }}><ShinyText text="Advanced encryption and stealth protection, redefining the standard for secure data exchange." disabled={false} speed={3} className='custom-class' /></h1>
+        <button className="cta-button"><Link to="/auth" style={{ textDecoration: 'none', color: 'inherit' }}>Let's get started</Link></button>
         </div>
         <div className="hero-section">
           <spline-viewer className="spline-model" url="https://prod.spline.design/ti2zZfnTxAkiwCOE/scene.splinecode"></spline-viewer>
@@ -75,7 +79,7 @@ const FrontPage = () => {
 
       {/* About Us Section */}
       <section data-aos="flip-left" data-aos-easing="ease-in-back" data-aos-duration="1000" id = "about" className="about-us">
-        <h2 >About Us</h2>
+        <h2 style={{fontFamily: 'Lucida Console, monospace'}}>ABOUT US</h2>
        <p>
        <ShinyText text="At HOBB, we specialize in cutting-edge encryption and secure communication solutions.
           Our mission is to empower individuals and businesses with innovative security tools 
@@ -85,7 +89,7 @@ const FrontPage = () => {
 
 {/* Team Section */}
 <section data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-duration="1000" id = "team" className="team-section">
-  <h2>Meet Our Team</h2>
+  <h2 style={{fontFamily: 'Lucida Console, monospace'}}>MEET OUR TEAM</h2>
   <div className="team-container">
     <div className="team-member">
       <img src={sai} alt="Aadithya Sai G Menon" className="team-img" />
@@ -108,7 +112,7 @@ const FrontPage = () => {
 
       {/* Contact Us Section */}
       <section id = "contact" className="contact-us">
-        <h2>Contact Us</h2>
+        <h2 style={{fontFamily: 'Lucida Console, monospace'}}>CONTACT US</h2>
         <p>Email: aadithyas0610@gmail.com</p>
         <p>Phone: +91 8075606049</p>
       </section>

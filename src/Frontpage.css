@@ -56,9 +56,12 @@ body, html {
 .logo {
   display: block;
   margin: 0 auto;
+  margin-top: -18px;
+  margin-left: -10px;
   border-radius: 40px;
   width: 70px;
   height: auto;
+  filter: invert(1);
 }
 
 /* Navigation Bar */
@@ -66,17 +69,15 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: #0072ff;
   border-radius: 15px;
+  margin-top: -40px;
   margin-left: 10px;
-  margin-right: 50px;
   padding: 0.1rem 2rem; /* Reduced padding for smaller height */
-  color: white;
+  color: rgb(255, 255, 255);
   position: fixed;
-  height: 10%;
-  width: 100%;
-  top: 0;
-  left: 0;
+  height: 9%;
+  width: 1500px;
   z-index: 1000;
 }
 
@@ -84,7 +85,7 @@ body, html {
   list-style: none;
   display: flex;
   gap: 2.5rem; /* Increased gap for more spacing between items */
-  margin: 0;
+  margin-bottom: 25px;
   padding: 0;
 }
 
@@ -93,22 +94,29 @@ body, html {
 }
 
 .nav-links a {
-  color: white;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: 'Blackletter', 'UnifrakturMaguntia', 'Londrina Solid', cursive;
   text-decoration: none;
   font-size: 1.1rem; /* Slightly increased font size for better readability */
 }
 
 .nav-links a:hover {
-  color: #0072ff; /* Optional: Hover effect for better user experience */
+  color: #ffffff; /* Optional: Hover effect for better user experience */
 }
 
 .nav-button {
-  background-color: #0072ff;
+  background-color: #f9f9f9;
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.nav-button:hover {
+  background: #000000; /* Blue color on hover */
+  color: white; /* Ensures text remains readable */
 }
 
 /* Hero Section */
@@ -118,6 +126,7 @@ body, html {
   height: 300px;
   right: 10px;
 }
+
 .hero-container {
   display: flex;
   align-items: center;
@@ -171,11 +180,12 @@ body, html {
 
 /* Buttons */
 button {
-  background: #0072ff;
+  background: white;
   border: none;
   padding: 10px 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 16px;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -235,7 +245,7 @@ button:hover {
 .team-member h3 {
   margin-top: 4%;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ForgotPassword from "./components/ForgotPassword";
@@ -7,7 +8,8 @@ import logo from "./components/logo.png";
 import Orb from "./components/Orb.jsx";
 
 const AuthenticationForm = () => {
-  
+
+  const navigate = useNavigate();  
   const [currentForm, setCurrentForm] = useState("login");
   const switchToLogin = () => setCurrentForm("login");
   const switchToSignup = () => setCurrentForm("signup");
@@ -25,14 +27,9 @@ const AuthenticationForm = () => {
         />
       </div>
       {/* Logo */}
-      <div className="logo-container" >
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
-      {/* Welcome Text */}
-      <div className="welcome-container">
-        <h1 className="welcome-text">Welcome to HOBB</h1>
-      </div>
+      <div className="logo-container" onClick={() => navigate("/")}>
+      <img src={logo} alt="Logo" className="logo-1" />
+    </div>
 
       {/* Form */}
       <div className="form-wrapper">

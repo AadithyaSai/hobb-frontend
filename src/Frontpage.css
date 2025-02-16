@@ -1,5 +1,6 @@
 /* Reset & Global Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -46,7 +47,6 @@ body, html {
   color: #1e90ff;
   text-size-adjust: 20px;
 }
-
 
 /* Logo Container */
 .logo-container {
@@ -117,11 +117,25 @@ body, html {
 .nav-button:hover {
   background: #000000; /* Blue color on hover */
   color: white; /* Ensures text remains readable */
+
+  .auth-link-btn {
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.auth-link-btn:hover {
+  background-color: #0082ff;
+  color: white !important;
 }
 
 /* Hero Section */
 
-.spline-model{
+.spline-model {
   position: absolute;
   height: 300px;
   right: 10px;
@@ -257,7 +271,6 @@ button:hover {
   border: 2px solid #ddd; /* Optional: Adds a border */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for styling */
 }
-
 
 /* === CONTACT US SECTION === */
 .contact-us {

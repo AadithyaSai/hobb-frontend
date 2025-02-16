@@ -67,7 +67,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
       <div className="form-container">
         <br></br><h2>Login</h2>
         <form onSubmit={handleLogin}>
-          <label htmlFor="username">Email</label>
+          {/* <label htmlFor="username">Email</label> */}
           <input
             type="email"
             name="username"
@@ -76,7 +76,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             onChange={onFormChange}
             required
           />
-          <label htmlFor="password">Password</label>
+          {/* <label htmlFor="password">Password</label> */}
           <input
             type="password"
             name="password"
@@ -85,14 +85,6 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             onChange={onFormChange}
             required
           />
-          <p className="forgot-password">
-            <span
-              onClick={onForgotPassword}
-              style={{ color: "red", cursor: "pointer" }}
-            >
-              Forgot Password?
-            </span>
-          </p>
           <button type="submit" className="button">
             Login
           </button>
@@ -100,13 +92,13 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         <p>
           <span
             onClick={onForgotPassword}
-            style={{ color: "white", cursor: "pointer" }}
+            style={{ fontWeight: '500',color: "red", cursor: "pointer" }}
           >
             Forgot Password?
           </span>
         </p>
-        <p>
-          Don't have an account? <span onClick={onSwitch}>Sign up</span>
+        <p style={{ fontWeight: '500',color: "violet"}}>
+        Don't have an account? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Sign up</span>
         </p>
       </div>
     </div>

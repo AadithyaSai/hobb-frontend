@@ -63,7 +63,7 @@ const Signup = ({ onSwitch }) => {
       <div className="form-container">
         <h2>Sign Up</h2>
         <form onSubmit={handleSignup}>
-          <label htmlFor="name">Your name</label>
+          {/* <label htmlFor="name">Your name</label> */}
           <input
             type="text"
             name="name"
@@ -72,7 +72,7 @@ const Signup = ({ onSwitch }) => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <label htmlFor="email">Email</label>
+          {/* <label htmlFor="email">Email</label> */}
           <input
             type="email"
             name="email"
@@ -81,7 +81,7 @@ const Signup = ({ onSwitch }) => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <label htmlFor="password">Password</label>
+          {/* <label htmlFor="password">Password</label> */}
           <input
             type="password"
             name="password"
@@ -94,8 +94,8 @@ const Signup = ({ onSwitch }) => {
             Sign Up
           </button>
         </form>
-        <p className="switch">
-          Already have an account? <span onClick={onSwitch}>Log in</span>
+        <p className="switch" style={{ fontWeight: '500',color: "violet"}}>
+          Already have an account? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Log in</span>
         </p>
       </div>
     </div>

@@ -21,30 +21,19 @@
 
 /* Logo container */
 .logo-container {
-  margin-bottom: 10px; /* Add space below logo */
+  margin-top: 15px;
+  margin-bottom: 10px; 
 }
 
-.logo {
+.logo-1 {
+  cursor: pointer;
+  z-index: 10;
   display: block;
   margin: 0 auto;
   border-radius: 40px;
-  width: 110px;
+  width: 90px;
   height: auto;
   filter: invert(1);
-}
-
-/* Welcome text container */
-.welcome-container {
-  margin-bottom: 20px; /* Add space below welcome text */
-}
-
-.welcome-text {
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-family:"Georgia";
-  text-align: center;
-  font-weight: bold;
-  margin: 0;
 }
 
 /* Form wrapper */
@@ -66,7 +55,10 @@
 h2 {
   color: rgb(35, 158, 253); /* Bright blue color */
   margin-bottom: 20px;
+  margin-top: -17px;
   text-align: center; /* Center text */
+  font-weight: bold; /* Make text bold */
+  font-family: 'Source Code Pro', monospace; /* Change font */
 }
 
 /* Form layout */
@@ -82,6 +74,8 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   z-index: 2;
+  font-family: 'Source Code Pro', monospace; /* Change font */
+
 }
 
 /* Button styling */
@@ -94,6 +88,9 @@ input {
   border-radius: 4px;
   cursor: pointer;
   z-index: 2;
+  font-weight: bold;
+  font-family: 'Source Code Pro', monospace; /* Change font */
+
 }
 
 /* Button hover effect */
@@ -115,9 +112,4 @@ p span {
 
 p span:hover {
   text-decoration: underline;
-}
-
-.welcome-text {
-  margin-top: -10px;
-  margin-bottom: -95px;
 }

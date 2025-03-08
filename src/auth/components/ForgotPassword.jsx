@@ -10,7 +10,7 @@ const ForgotPassword = ({ onSwitch }) => {
   };
 
   return (
-    <div style= {{marginTop:"50px"}}className="form-container">
+    <div style={{ marginTop: "50px" }} className="form-container">
       <h2>Forgot Password</h2>
       <form onSubmit={handleReset}>
         <input
@@ -24,8 +24,11 @@ const ForgotPassword = ({ onSwitch }) => {
           Send Reset Link
         </button>
       </form>
-      <p style={{ fontWeight: '500',color: "violet"}}>
-        Remember your password? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Log in</span>
+      <p style={{ fontWeight: "500", color: "violet" }}>
+        Remember your password?{" "}
+        <span onClick={onSwitch} style={{ fontWeight: "bold" }}>
+          Log in
+        </span>
       </p>
     </div>
   );

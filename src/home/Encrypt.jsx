@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import Squares from "./Squares";
 import DecryptedText from "./DecryptedText";
+import { useNavigate } from "react-router-dom";
 
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
   const [img, setImg] = useState("");
   const [encryptedText, setEncryptedText] = useState("");
   const [ImgUrl, setImgUrl] = useState("");
+  const navigate = useNavigate();
 
   const handleEncrypt = (event) => {
     event.preventDefault();
@@ -114,7 +116,7 @@ const Encrypt = () => {
             className="btn btn-danger mt-3"
             onClick={() => {
               localStorage.removeItem("token");
-              window.location.reload(true);
+              navigate("/auth");
             }}
           >
             Sign Out

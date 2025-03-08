@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../AuthenticationForm.css";
-import { data } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Alert from "../../common/Alert";
 
 const Login = ({ onSwitch, onForgotPassword }) => {
@@ -10,6 +10,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
     message: "",
     type: "",
   });
+  const navigate = useNavigate();
 
   const onFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,7 +42,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         } else {
           console.log(data);
           localStorage.setItem("token", data.access_token);
-          window.location.reload(true);
+          navigate("/home");
         }
       })
       .catch((error) => {

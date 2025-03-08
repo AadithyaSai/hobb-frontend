@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../AuthenticationForm.css";
 import Alert from "../../common/Alert";
 
@@ -11,6 +12,7 @@ const Signup = ({ onSwitch }) => {
     message: "",
     type: "",
   });
+  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -37,7 +39,8 @@ const Signup = ({ onSwitch }) => {
         if (data.error) {
           alert(data.error);
         } else {
-          window.location.reload(true);
+          localStorage.setItem("token", data.access_token);
+          navigate("/home");
         }
       })
       .catch((error) => {

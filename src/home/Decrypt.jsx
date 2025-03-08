@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 import Squares from "./Squares";
 import DecryptedText from "./DecryptedText";
+import { useNavigate } from "react-router-dom";
 
 const Decrypt = () => {
   const [cipherInput, setCipherInput] = useState("");
   const [stegoImg, setStegoImg] = useState("");
   const [decryptedText, setDecryptedText] = useState("");
+  const navigate = useNavigate();
 
   const handleDecrypt = (event) => {
     event.preventDefault();
@@ -97,7 +99,7 @@ const Decrypt = () => {
               className="btn btn-danger mt-3"
               onClick={() => {
                 localStorage.removeItem("token");
-                window.location.reload(true);
+                navigate("/auth");
               }}
             >
               Sign Out

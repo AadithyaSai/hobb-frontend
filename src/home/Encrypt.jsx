@@ -76,24 +76,24 @@ const Encrypt = () => {
             />
           </div>
           <div className="d-flex flex-row align-items-center justify-content-center gap-3 mb-3">
-  {/* Secondary Buttons */}
-  <label className="btn btn-success m-0">
-    {img ? img.name : "Upload Image"}
-    <input
-      type="file"
-      name="image"
-      accept="image/*"
-      className="form-control required d-none"
-      onChange={(e) => setImg(e.target.files[0])}
-    />
-  </label>
-  {/* Encrypt Button */}
-  <button type="submit" className="btn btn-success">
-    Encrypt
-  </button>
-</div>
+            {/* Secondary Buttons */}
+            <label className="btn btn-success m-0">
+              {img ? img.name : "Upload Image"}
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                className="form-control required d-none"
+                onChange={(e) => setImg(e.target.files[0])}
+              />
+            </label>
+            {/* Encrypt Button */}
+            <button type="submit" className="btn btn-success">
+              Encrypt
+            </button>
+          </div>
         </form>
-        
+
         <div className="bg-light p-3 rounded">
           <div className="mb-3">
             <div className="text-break">
@@ -114,7 +114,7 @@ const Encrypt = () => {
             className="btn btn-danger mt-3"
             onClick={() => {
               localStorage.removeItem("token");
-              window.location.reload();
+              window.location.reload(true);
             }}
           >
             Sign Out

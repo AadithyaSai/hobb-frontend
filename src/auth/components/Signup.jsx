@@ -37,7 +37,7 @@ const Signup = ({ onSwitch }) => {
         if (data.error) {
           alert(data.error);
         } else {
-          window.location.reload();
+          window.location.reload(true);
         }
       })
       .catch((error) => {
@@ -94,8 +94,11 @@ const Signup = ({ onSwitch }) => {
             Sign Up
           </button>
         </form>
-        <p className="switch" style={{ fontWeight: '500',color: "violet"}}>
-          Already have an account? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Log in</span>
+        <p className="switch" style={{ fontWeight: "500", color: "violet" }}>
+          Already have an account?{" "}
+          <span onClick={onSwitch} style={{ fontWeight: "bold" }}>
+            Log in
+          </span>
         </p>
       </div>
     </div>

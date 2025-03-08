@@ -41,7 +41,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         } else {
           console.log(data);
           localStorage.setItem("token", data.access_token);
-          window.location.reload();
+          window.location.reload(true);
         }
       })
       .catch((error) => {
@@ -65,7 +65,8 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         setInactive={() => setAlertData({ ...alertData, active: false })}
       />
       <div className="form-container">
-        <br></br><h2>Login</h2>
+        <br></br>
+        <h2>Login</h2>
         <form onSubmit={handleLogin}>
           {/* <label htmlFor="username">Email</label> */}
           <input
@@ -92,13 +93,16 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         <p>
           <span
             onClick={onForgotPassword}
-            style={{ fontWeight: '500',color: "red", cursor: "pointer" }}
+            style={{ fontWeight: "500", color: "red", cursor: "pointer" }}
           >
             Forgot Password?
           </span>
         </p>
-        <p style={{ fontWeight: '500',color: "violet"}}>
-        Don't have an account? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Sign up</span>
+        <p style={{ fontWeight: "500", color: "violet" }}>
+          Don't have an account?{" "}
+          <span onClick={onSwitch} style={{ fontWeight: "bold" }}>
+            Sign up
+          </span>
         </p>
       </div>
     </div>

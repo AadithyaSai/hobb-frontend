@@ -97,7 +97,7 @@ const Decrypt = () => {
               className="btn btn-danger mt-3"
               onClick={() => {
                 localStorage.removeItem("token");
-                window.location.reload();
+                window.location.reload(true);
               }}
             >
               Sign Out

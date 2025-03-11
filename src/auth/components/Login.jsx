@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../AuthenticationForm.css";
-import { data } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Alert from "../../common/Alert";
 
 const Login = ({ onSwitch, onForgotPassword }) => {
@@ -10,6 +10,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
     message: "",
     type: "",
   });
+  const navigate = useNavigate();
 
   const onFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,7 +42,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         } else {
           console.log(data);
           localStorage.setItem("token", data.access_token);
-          window.location.reload();
+          navigate("/home");
         }
       })
       .catch((error) => {
@@ -65,7 +66,8 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         setInactive={() => setAlertData({ ...alertData, active: false })}
       />
       <div className="form-container">
-        <br></br><h2>Login</h2>
+        <br></br>
+        <h2>Login</h2>
         <form onSubmit={handleLogin}>
           {/* <label htmlFor="username">Email</label> */}
           <input
@@ -92,13 +94,16 @@ const Login = ({ onSwitch, onForgotPassword }) => {
         <p>
           <span
             onClick={onForgotPassword}
-            style={{ fontWeight: '500',color: "red", cursor: "pointer" }}
+            style={{ fontWeight: "500", color: "red", cursor: "pointer" }}
           >
             Forgot Password?
           </span>
         </p>
-        <p style={{ fontWeight: '500',color: "violet"}}>
-        Don't have an account? <span onClick={onSwitch} style={{ fontWeight: 'bold' }}>Sign up</span>
+        <p style={{ fontWeight: "500", color: "violet" }}>
+          Don't have an account?{" "}
+          <span onClick={onSwitch} style={{ fontWeight: "bold" }}>
+            Sign up
+          </span>
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FrontPage from "./src/pages/FrontPage";
+import Frontpage from "./src/pages/Frontpage";
 import AuthenticationForm from "./auth/AuthenticationForm";
 
 function App() {
@@ -15,4 +15,3 @@ function App() {
 }
 
 export default App;
-

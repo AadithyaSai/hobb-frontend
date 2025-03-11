@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FaSignInAlt, FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./FrontPage.css";
+import "./Frontpage.css";
 import CircularGallery from "./CircularGallery.jsx";
 import logo from "./logo.png";
 import sai from "./sai.jpg";

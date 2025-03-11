@@ -29,7 +29,7 @@ const FrontPage = () => {
     <div className="front-page">
 {/* OGP META TAGS */}
 <Helmet>
-    <title>HOBB - Advanced Encryption & Security</title>
+    <title>HOBB</title>
     <meta property="og:title" content="HOBB - Advanced Encryption & Security" />
     <meta property="og:description" content="Revolutionizing secure data exchange with cutting-edge encryption and stealth protection." />
     <meta property="og:image" content="https://hobb-cryption.onrender.com/logo.png" />

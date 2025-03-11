@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { FaSignInAlt, FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Frontpage.css";
-import CircularGallery from "./CircularGallery.jsx";
+import { Helmet } from "react-helmet";
+import "./FrontPage.css"; 
+import CircularGallery from "./CircularGallery";
 import logo from "./logo.png";
 import sai from "./sai.jpg";
 import gopz from "./gopz.jpg";
@@ -26,6 +27,16 @@ const FrontPage = () => {
 
   return (
     <div className="front-page">
+{/* OGP META TAGS */}
+<Helmet>
+    <title>HOBB - Advanced Encryption & Security</title>
+    <meta property="og:title" content="HOBB - Advanced Encryption & Security" />
+    <meta property="og:description" content="Revolutionizing secure data exchange with cutting-edge encryption and stealth protection." />
+    <meta property="og:image" content="https://hobb-cryption.onrender.com/logo.png" />
+    <meta property="og:url" content="https://hobb-cryption.onrender.com/" />
+    <meta property="og:type" content="website" />
+</Helmet>
+
       {/* Navigation Bar */}
       <nav className="navbar">
         <h2 className="logo-container">

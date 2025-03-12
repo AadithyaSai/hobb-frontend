@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { FaSignInAlt, FaKey } from "react-icons/fa";
+import React from "react";
+import { FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./Frontpage.css";

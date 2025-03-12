@@ -22,7 +22,8 @@
 /* Logo container */
 .logo-container {
   margin-top: 15px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  z-index: 2;
 }
 
 .logo-1 {
@@ -40,10 +41,10 @@
 .form-wrapper {
   width: 20%;
   max-width: 400px;
-  height: 350px;   
+  height: 350px;
   display: flex;
   flex-direction: column;
-  background:transparent;
+  background: transparent;
   /* background: rgba(255, 255, 255, 0.1); Semi-transparent background */
   /* backdrop-filter: blur(10px);  */
   border-radius: 10px;
@@ -58,7 +59,7 @@ h2 {
   margin-top: -17px;
   text-align: center; /* Center text */
   font-weight: bold; /* Make text bold */
-  font-family: 'Source Code Pro', monospace; /* Change font */
+  font-family: "Source Code Pro", monospace; /* Change font */
 }
 
 /* Form layout */
@@ -74,8 +75,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   z-index: 2;
-  font-family: 'Source Code Pro', monospace; /* Change font */
-
+  font-family: "Source Code Pro", monospace; /* Change font */
 }
 
 /* Button styling */
@@ -89,8 +89,7 @@ input {
   cursor: pointer;
   z-index: 2;
   font-weight: bold;
-  font-family: 'Source Code Pro', monospace; /* Change font */
-
+  font-family: "Source Code Pro", monospace; /* Change font */
 }
 
 /* Button hover effect */

@@ -67,6 +67,7 @@ const Decrypt = () => {
                 name="ciphertext"
                 className="form-control"
                 value={cipherInput}
+                autoComplete="off"
                 onChange={(e) => setCipherInput(e.target.value)}
                 placeholder="Enter your secret code"
               />

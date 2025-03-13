@@ -76,6 +76,7 @@ const Login = ({ onSwitch, onForgotPassword }) => {
             placeholder="Email"
             value={formData.username}
             onChange={onFormChange}
+            autoComplete="off"
             required
           />
           {/* <label htmlFor="password">Password</label> */}

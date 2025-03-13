@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { MdContentCopy } from "react-icons/md";
 import { Link } from "react-router";
 import Squares from "./Squares";
 import DecryptedText from "./DecryptedText";
 import { useNavigate } from "react-router-dom";
+import { button } from "framer-motion/client";
 
 const Encrypt = () => {
   const [plainText, setPlainText] = useState("");
@@ -73,6 +75,7 @@ const Encrypt = () => {
               name="plaintext"
               className="form-control"
               value={plainText}
+              autoComplete="off"
               onChange={(e) => setPlainText(e.target.value)}
               placeholder="Drop your secret message here!!"
             />
@@ -96,16 +99,31 @@ const Encrypt = () => {
           </div>
         </form>
 
-        <div className="bg-light p-3 rounded">
+        <div
+          className="bg-light p-3 rounded"
+          style={{
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
+            maxWidth: "100%",
+          }}
+        >
           <div className="mb-3">
             <div className="text-dark">
               {encryptedText || "Here's your secret code !"}
             </div>
           </div>
           {encryptedText && (
-            <a className="btn btn-success" href={ImgUrl} download="stego.png">
-              Download Image
-            </a>
+            <div>
+              <a
+                className="btn btn-success p-1 me-2"
+                onClick={() => navigator.clipboard.writeText(encryptedText)}
+              >
+                <MdContentCopy />
+              </a>
+              <a className="btn btn-success" href={ImgUrl} download="stego.png">
+                Download Image
+              </a>
+            </div>
           )}
         </div>
         <div className="d-flex flex-column align-items-center">

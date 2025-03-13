@@ -111,3 +111,8 @@ p span {
 p span:hover {
   text-decoration: underline;
 }
+
+input:disabled {
+  background-color: #a3a3a3;
+  color: #222;
+}

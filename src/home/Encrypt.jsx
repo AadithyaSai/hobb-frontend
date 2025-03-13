@@ -98,7 +98,7 @@ const Encrypt = () => {
 
         <div className="bg-light p-3 rounded">
           <div className="mb-3">
-            <div className="text-break">
+            <div className="text-dark">
               {encryptedText || "Here's your secret code !"}
             </div>
           </div>

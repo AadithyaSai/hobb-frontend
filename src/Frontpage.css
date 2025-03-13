@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Eczar:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+
 body,
 html {
   margin: 0;
@@ -30,12 +32,12 @@ html {
   justify-content: space-between;
   align-items: center;
   background-color: #f3f3f3; /* changed color*/
-  border-radius: 25px;
+  border-radius: 0 0 20px 20px;
   padding: 1rem 2rem;
   color: rgb(255, 255, 255);
   position: fixed;
   height: 85px; /*changed height temporary*/
-  width: 95vw; /*changed width format*/
+  width: 100vw; /*changed width format*/
   z-index: 1000;
   /*left: 50%;
   transform: translateX(-50%);*/
@@ -58,14 +60,14 @@ html {
 .nav-links a {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif; /*changed font*/
+  font-family: "Eczar", sans-serif;
   /* font-family: 'Blackletter', 'UnifrakturMaguntia', 'Londrina Solid', cursive; */
   text-decoration: none;
   font-size: 1.1rem; /* Slightly increased font size for better readability */
 }
 
 .nav-links a:hover {
-  color: #228b22; /* Optional: Hover effect for better user experience */
+  color: #ae3ef3; /* Optional: Hover effect for better user experience */
 }
 
 .nav-button {
@@ -154,7 +156,8 @@ button {
 }
 
 button:hover {
-  background: #568203;
+  background: #ae3ef3c7;
+  color: white;
 }
 
 /* === ABOUT US SECTION === */
@@ -166,7 +169,7 @@ button:hover {
 
 .about-us h2 {
   font-size: 40px;
-  color: #1e90ff;
+  color: #ae3ef3c7;
 }
 
 .about-us p {
@@ -184,7 +187,7 @@ button:hover {
 
 .team-section h2 {
   font-size: 40px;
-  color: #1e90ff;
+  color: #ae3ef3c7;
   margin-bottom: 3%;
 }
 
@@ -230,7 +233,7 @@ button:hover {
 
 .contact-us h2 {
   font-size: 40px;
-  color: #1e90ff;
+  color: #ae3ef3c7;
 }
 
 .contact-us p {

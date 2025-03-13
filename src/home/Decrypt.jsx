@@ -88,7 +88,7 @@ const Decrypt = () => {
             </div>
           </form>
           <div className="d-flex flex-column align-items-center mb-3"></div>
-          <div className="bg-light p-3 rounded">
+          <div className="bg-light text-dark p-3 rounded">
             {decryptedText || "Here's your message"}
           </div>
           <div className="d-flex flex-column align-items-center mb-3">

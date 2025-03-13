@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaSignInAlt, FaKey } from "react-icons/fa";
-import { IoMdLogIn } from "react-icons/io";
+import { RiLoginCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./Frontpage.css";
 import CircularGallery from "./CircularGallery.jsx";
@@ -49,7 +49,7 @@ const FrontPage = () => {
           {/* Updated Login / Sign Up Button */}
           <li>
             <Link to="/auth" className="nav-button">
-              <IoMdLogIn size={30} />
+              <RiLoginCircleFill size={30} />
             </Link>
           </li>
         </ul>
@@ -109,7 +109,7 @@ const FrontPage = () => {
       </div>
 
       {/* Circular Gallery */}
-      <h1 style={{ color: "#0072ff" }}>WHY US?</h1>
+      <h1 style={{ color: "#ae3ef3c7" }}>WHY US?</h1>
       <div className="circular-gallery-container">
         <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
       </div>

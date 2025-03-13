@@ -24,7 +24,7 @@ const Encrypt = () => {
     }
     const formData = new FormData(event.target);
     console.log(...formData);
-    fetch("http://localhost:8000/encrypt", {
+    fetch(import.meta.env.VITE_HOBB_BACKEND_URL + "/encrypt", {
       method: "POST",
       body: formData,
     })

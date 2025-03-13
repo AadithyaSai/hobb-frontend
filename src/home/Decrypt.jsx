@@ -18,7 +18,7 @@ const Decrypt = () => {
     }
     const formData = new FormData(event.target);
     console.log(...formData);
-    fetch("http://localhost:8000/decrypt", {
+    fetch(import.meta.env.VITE_HOBB_BACKEND_URL + "decrypt", {
       method: "POST",
       body: formData,
     })

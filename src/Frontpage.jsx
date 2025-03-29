@@ -11,6 +11,7 @@ import ammu from "./ammu.jpg";
 import nadim from "./nadim.jpg";
 import SplitText from "./SplitText.jsx";
 import ShinyText from "./ShinyText.jsx";
+import Folder from "./Folder.jsx";
 
 window.onload = function () {
   var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
@@ -168,10 +169,34 @@ const FrontPage = () => {
 
       {/* Contact Us Section */}
       <section id="contact" className="contact-us">
-        <h2 style={{ fontFamily: "Lucida Console, monospace" }}>CONTACT US</h2>
-        <p>Email: aadithyas0610@gmail.com</p>
-        <p>Phone: +91 8075606049</p>
-      </section>
+        <h2 style={{ fontFamily: "Lucida Console, monospace" }}>Reach out and say Hello</h2>
+        <p>
+          <ShinyText
+            text="Get in touch through any of the channels given below. We're eager to hear from you!"
+            disabled={false}
+            speed={3}
+            className="custom-class"
+          />
+        </p>
+
+        <div style={{ position: "relative", width: "100px", height: "100px" }}>
+        <Folder size={3} color="#6422ab" className="custom-folder" />
+        <span
+        style={{
+        position: "absolute",
+        top: "30%",
+        left: "700%",
+        fontSize: "25px",
+        fontWeight: "bold",
+        color: "white",
+        pointerEvents: "none",
+        fontFamily: "Lucida Console, monospace"
+        }}
+    > Contact Us
+  </span>
+</div>
+
+    </section>
     </div>
   );
 };
